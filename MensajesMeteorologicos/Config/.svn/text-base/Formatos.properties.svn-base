@@ -1,0 +1,22 @@
+#Se guardan cambios
+#Mon Mar 18 07:37:00 COT 2013
+tmax=Formato.F13p5
+fecha=Formato.A20FECHA
+nombre=Formato.A40
+plataforma=Formato.A40
+elevacion=Formato.F20p5
+id_estacion=Formato.A40
+vviento=Formato.F13p5
+altura=Formato.F13p5
+consecutivo=Formato.I10
+dviento=Formato.F13p5
+presion_observacion=Formato.F13p5
+presion=Formato.F13p5
+fuente=Formato.A40
+precipitacion=Formato.F13p5
+temperatura=Formato.F13p5
+hr=Formato.F13p5
+latitud=Formato.F20p5
+longitud=Formato.F20p5
+tmin=Formato.F13p5
+slp=Formato.F13p5

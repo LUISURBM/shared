@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="dsHIMEDESA" >
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.password">SSHM2011</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@172.16.1.21:1521:DBPRUEBA</property>
+        <property name="hibernate.connection.username">DESA_SSHM</property>
+        <property name="hibernate.default_schema">HIDROMET</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.c3p0.timeout">720</property>
+    </session-factory>
+</hibernate-configuration>

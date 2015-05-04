@@ -1,0 +1,25 @@
+#Se guardan cambios
+#Thu Aug 01 12:28:15 COT 2013
+tmax=MAX(CASE WHEN SENSOR \= 69 THEN (DATO+273) ELSE 0 END)
+altitud=siov.ALTITUD
+fecha='02112012'
+nombre=siov.NOMBRE_ES
+plataforma=siov.NOMBRE_PMA
+vviento=AVG(CASE WHEN SENSOR \= 103 THEN DATO ELSE 0 END)
+between=AND saai.hora BETWEEN
+humedad_relativa=AVG(CASE WHEN SENSOR \= 27 THEN DATO ELSE 0 END)
+codigo=siov.COD_INTERNO_ES
+longitud=(siov.GRADOS_LONGITUD+(siov.MINUTOS_LONGITUD/60)+(siov.SEGUNDOS_LONGITUD/3600) )*decode(siov.DIRECCION_LONGITUD,'E',1,'W',-1)
+consecutivo=rank() OVER (ORDER BY COD_INTERNO_ES) as seq_num
+group=GROUP BY cod_interno_es,nombre_pma,nombre_es,grados_latitud,minutos_latitud,segundos_latitud,direccion_latitud,GRADOS_LONGITUD,MINUTOS_LONGITUD,SEGUNDOS_LONGITUD,DIRECCION_LONGITUD,ALTITUD  ORDER BY seq_num
+dviento=STATS_MODE(CASE WHEN SENSOR \= 104 THEN DATO ELSE 0 END)
+otad=TO_NUMBER(replace(dato,',','.'))
+hora='170000' AND '175959'
+dato=TO_NUMBER(replace(dato,'.',','))
+from=FROM siov_estaciones siov, saai_temporal saai WHERE saai.estacion \= siov.cod_interno_es AND saai.fecha 
+presion=MAX(CASE WHEN SENSOR \= 255 THEN DATO ELSE null END) 
+precipitacion=SUM(CASE WHEN SENSOR \= 240 THEN DATO ELSE 0 END)
+temperatura=MAX(CASE WHEN SENSOR \= 68 THEN (DATO+273) ELSE 0 END)
+tmin=MIN(CASE WHEN SENSOR \= 70 THEN (DATO+273) ELSE 0 END)
+latitud=(siov.GRADOS_LATITUD+(siov.MINUTOS_LATITUD/60)+(siov.SEGUNDOS_LATITUD/3600) )*decode(siov.DIRECCION_LATITUD,'N',1,'S',-1)
+slp=(MAX(CASE WHEN SENSOR \= 255 THEN DATO ELSE null END))*(exp((siov.altitud*9.8)/(286.8*292.4)))
